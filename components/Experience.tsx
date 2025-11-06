@@ -38,12 +38,12 @@ const experienceData: ExperienceItem[] = [
 ];
 
 const ExperienceCard: React.FC<{ item: ExperienceItem }> = ({ item }) => (
-  <div className="pl-8 relative before:absolute before:left-2 before:top-2 before:w-4 before:h-4 before:bg-accent before:rounded-full before:border-4 before:border-secondary">
+  <div className="pl-8 relative before:absolute before:left-2 before:top-2 before:w-4 before:h-4 before:bg-accent before:rounded-full before:border-4 before:border-light dark:before:border-secondary">
     <div className="mb-4">
-      <h3 className="text-xl font-bold text-light">{item.role}</h3>
+      <h3 className="text-xl font-bold text-primary dark:text-light">{item.role}</h3>
       <p className="text-accent font-semibold">{item.company} | {item.duration}</p>
     </div>
-    <ul className="list-disc list-inside space-y-2 text-medium">
+    <ul className="list-disc list-inside space-y-2 text-gray-600 dark:text-medium">
       {item.description.map((desc, index) => (
         <li key={index}>{desc}</li>
       ))}
@@ -55,7 +55,7 @@ const Experience: React.FC = () => {
   return (
     <Section id="experience" title="Work Experience">
       <div className="max-w-3xl mx-auto">
-        <div className="relative border-l-2 border-secondary space-y-12">
+        <div className="relative border-l-2 border-gray-200 dark:border-secondary space-y-12">
           {experienceData.map((item, index) => (
             <ExperienceCard key={index} item={item} />
           ))}

@@ -10,7 +10,7 @@ interface SectionProps {
 const Section: React.FC<SectionProps> = ({ id, title, children }) => {
   return (
     <section id={id} className="py-20 md:py-28">
-      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-light">
+      <h2 className="text-3xl md:text-4xl font-bold text-center mb-12 text-primary dark:text-light">
         {title}
         <span className="text-accent">.</span>
       </h2>

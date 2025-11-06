@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" class="scroll-smooth">
+<html lang="en" class="scroll-smooth dark">
   <head>
     <meta charset="UTF--8" />
     <link rel="icon" type="image/svg+xml" href="/favicon.ico" />
@@ -11,6 +11,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
     <script>
       tailwind.config = {
+        darkMode: 'class',
         theme: {
           extend: {
             fontFamily: {
@@ -38,10 +39,7 @@
     </script>
     <style>
       body {
-        background-image: url('https://images.unsplash.com/photo-1550439062-609e1531270e?q=80&w=2070&auto=format&fit=crop');
-        background-size: cover;
-        background-position: center;
-        background-attachment: fixed;
+        /* Background is now handled by theme classes */
       }
     </style>
   <script type="importmap">
@@ -54,7 +52,7 @@
 }
 </script>
 </head>
-  <body class="text-light font-sans">
+  <body class="bg-light dark:bg-primary text-secondary dark:text-light font-sans">
     <div id="root"></div>
     <script type="module" src="/index.tsx"></script>
   </body>
