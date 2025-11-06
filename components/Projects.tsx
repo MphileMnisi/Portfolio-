@@ -20,7 +20,7 @@ const projectsData: Project[] = [
     tags: ['React', 'Next.js', 'Firebase', 'Data Scraping', 'Algorithm'],
     imageUrl: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=2148&auto=format&fit=crop',
     liveUrl: 'https://sa-school-recommendation-system.vercel.app/',
-    sourceUrl: '#',
+    sourceUrl: 'https://github.com/nkosimphile-mnisi/sa-school-recommendation-system',
   },
   {
     title: 'Conversational AI Chatbot',
@@ -37,7 +37,7 @@ const projectsData: Project[] = [
     tags: ['React', 'TypeScript', 'AI/ML', 'NLP API', 'Tailwind CSS'],
     imageUrl: 'https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80&w=2070&auto=format&fit=crop',
     liveUrl: 'https://chatbot-git-main-mphilemnisis-projects.vercel.app/',
-    sourceUrl: '#',
+    sourceUrl: 'https://github.com/nkosimphile-mnisi/conversational-ai-chatbot',
   },
   {
     title: 'AI Resume Builder',
@@ -54,7 +54,7 @@ const projectsData: Project[] = [
     tags: ['React', 'Next.js', 'Generative AI', 'UI/UX Design', 'PDF Generation'],
     imageUrl: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2070&auto=format&fit=crop',
     liveUrl: 'https://ai-resume-builder-one-phi.vercel.app/',
-    sourceUrl: '#',
+    sourceUrl: 'https://github.com/nkosimphile-mnisi/ai-resume-builder',
   },
 ];
 
@@ -77,15 +77,27 @@ const ProjectDetailModal: React.FC<{ project: Project; onClose: () => void }> = 
           {project.detailedDescription && (
             <div dangerouslySetInnerHTML={{ __html: project.detailedDescription }} />
           )}
-          <div className="mt-6 flex justify-end space-x-4">
+          <div className="mt-8 flex flex-wrap justify-end gap-4">
             {project.sourceUrl && (
-              <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-medium hover:text-accent transition-colors">
-                <GitHubIcon className="w-8 h-8" />
+              <a
+                href={project.sourceUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-gray-100 dark:bg-primary text-gray-800 dark:text-light font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
+              >
+                <GitHubIcon className="w-5 h-5" />
+                <span>Source Code</span>
               </a>
             )}
             {project.liveUrl && (
-              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-medium hover:text-accent transition-colors">
-                <ExternalLinkIcon className="w-8 h-8" />
+              <a
+                href={project.liveUrl}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center gap-2 bg-accent text-primary font-bold py-2 px-4 rounded-lg hover:bg-opacity-80 transition-colors"
+              >
+                <ExternalLinkIcon className="w-5 h-5" />
+                <span>View Live Demo</span>
               </a>
             )}
           </div>
@@ -99,10 +111,12 @@ const ProjectDetailModal: React.FC<{ project: Project; onClose: () => void }> = 
 const ProjectCard: React.FC<{ project: Project; onClick: () => void }> = ({ project, onClick }) => {
   return (
     <div 
-      className="bg-white dark:bg-secondary rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col transform hover:scale-105 cursor-pointer"
+      className="bg-white dark:bg-secondary rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col transform hover:scale-105 cursor-pointer group"
       onClick={onClick}
     >
-      <img src={project.imageUrl} alt={project.title} className="w-full h-56 object-cover" />
+      <div className="overflow-hidden">
+        <img src={project.imageUrl} alt={project.title} className="w-full h-56 object-cover transition-transform duration-300 group-hover:scale-110" />
+      </div>
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold text-primary dark:text-light mb-2">{project.title}</h3>
         <div className="flex flex-wrap gap-2 mb-4">
@@ -111,15 +125,17 @@ const ProjectCard: React.FC<{ project: Project; onClick: () => void }> = ({ proj
           ))}
         </div>
         <p className="text-gray-600 dark:text-medium flex-grow mb-4">{project.description}</p>
-        <div className="mt-auto flex justify-end space-x-4">
+        <div className="mt-auto flex justify-end items-center gap-4">
           {project.sourceUrl && (
-            <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-medium hover:text-accent transition-colors" onClick={(e) => e.stopPropagation()}>
-              <GitHubIcon className="w-6 h-6" />
+            <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-medium hover:text-accent transition-colors" onClick={(e) => e.stopPropagation()}>
+              <GitHubIcon className="w-5 h-5" />
+              Source
             </a>
           )}
           {project.liveUrl && (
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-medium hover:text-accent transition-colors" onClick={(e) => e.stopPropagation()}>
-              <ExternalLinkIcon className="w-6 h-6" />
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-medium hover:text-accent transition-colors" onClick={(e) => e.stopPropagation()}>
+              <ExternalLinkIcon className="w-5 h-5" />
+              Live Demo
             </a>
           )}
         </div>
@@ -159,6 +175,8 @@ const Projects: React.FC = () => {
               className={`font-medium py-2 px-4 rounded-full transition-colors duration-300 ${
                 selectedTag === tag
                   ? 'bg-accent text-primary'
+                  : tag === 'All'
+                  ? 'bg-white dark:bg-transparent border border-gray-300 dark:border-gray-500 text-gray-700 dark:text-medium hover:bg-gray-100 dark:hover:bg-gray-700'
                   : 'bg-gray-100 text-gray-700 dark:bg-secondary dark:text-medium hover:bg-accent/80 hover:text-primary'
               }`}
             >

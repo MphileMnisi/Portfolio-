@@ -8,7 +8,7 @@ import Contact from './components/Contact';
 import Footer from './components/Footer';
 
 const App: React.FC = () => {
-  const [theme, setTheme] = useState('dark');
+  const [theme, setTheme] = useState('light');
   const homeRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
@@ -36,7 +36,7 @@ const App: React.FC = () => {
   };
 
   return (
-    <div className="bg-light dark:bg-primary/95 min-h-screen">
+    <div className="bg-light/95 dark:bg-primary/95 min-h-screen">
       <Header navRefs={navRefs} theme={theme} toggleTheme={toggleTheme} />
       <main className="container mx-auto px-6 md:px-12">
         <div ref={homeRef}>
