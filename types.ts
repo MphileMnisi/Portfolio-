@@ -1,6 +1,8 @@
+// Fix: Removed a self-import of the `Project` type which was causing a name conflict.
 export interface Project {
   title: string;
   description: string;
+  detailedDescription?: string;
   tags: string[];
   imageUrl: string;
   liveUrl?: string;

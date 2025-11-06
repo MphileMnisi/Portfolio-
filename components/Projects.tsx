@@ -1,39 +1,107 @@
-import React from 'react';
+import React, { useState, useMemo } from 'react';
 import { Project } from '../types';
 import Section from './Section';
-import { GitHubIcon, ExternalLinkIcon } from './icons/Icons';
+import { GitHubIcon, ExternalLinkIcon, XIcon } from './icons/Icons';
 
 
 const projectsData: Project[] = [
   {
-    title: 'E-Commerce Platform',
-    description: 'A full-featured e-commerce site with product browsing, cart functionality, and a secure checkout process. Built with Next.js for server-side rendering and performance.',
-    tags: ['React', 'Next.js', 'TypeScript', 'Stripe', 'Tailwind CSS'],
-    imageUrl: 'https://picsum.photos/seed/project1/800/600',
-    liveUrl: '#',
+    title: 'SA School Recommendation System',
+    description: 'An intelligent platform designed to assist users in finding the best-fit schools in South Africa based on personalized criteria and a smart recommendation algorithm.',
+    detailedDescription: `
+      <h4 class="text-lg font-bold text-light mb-2">Technical Challenges & Solutions:</h4>
+      <ul class="list-disc list-inside space-y-2 text-medium">
+        <li><strong>Challenge:</strong> Sourcing and structuring a comprehensive dataset of South African schools for effective querying.</li>
+        <li><strong>Solution:</strong> Developed a data aggregation script and structured the information in a NoSQL database (Firebase), allowing for flexible and efficient filtering based on location, curriculum, and fees.</li>
+        <li><strong>Challenge:</strong> Designing a recommendation algorithm that provides relevant results from user preferences.</li>
+        <li><strong>Solution:</strong> Implemented a content-based filtering system. A scoring mechanism was created to rank schools by matching their attributes against user-defined preferences, ensuring personalized and accurate recommendations.</li>
+      </ul>
+    `,
+    tags: ['React', 'Next.js', 'Firebase', 'Data Scraping', 'Algorithm'],
+    imageUrl: 'https://images.unsplash.com/photo-1523050854058-8df90110c9f1?q=80&w=2070&auto=format&fit=crop',
+    liveUrl: 'https://sa-school-recommendation-system.vercel.app/',
     sourceUrl: '#',
   },
   {
-    title: 'Data Visualization Dashboard',
-    description: 'An interactive dashboard for visualizing complex datasets. Features real-time data updates and customizable charts, powered by D3.js.',
-    tags: ['React', 'D3.js', 'Node.js', 'WebSocket', 'Material UI'],
-    imageUrl: 'https://picsum.photos/seed/project2/800/600',
-    liveUrl: '#',
+    title: 'Conversational AI Chatbot',
+    description: 'A responsive and intelligent chatbot that provides human-like, context-aware responses to user queries, powered by modern natural language processing.',
+    detailedDescription: `
+      <h4 class="text-lg font-bold text-light mb-2">Technical Challenges & Solutions:</h4>
+      <ul class="list-disc list-inside space-y-2 text-medium">
+        <li><strong>Challenge:</strong> Achieving natural, context-aware conversations that go beyond simple canned responses.</li>
+        <li><strong>Solution:</strong> Integrated a powerful third-party NLP API to handle the complexities of language understanding and generation. The application state was designed to maintain conversation history, providing crucial context for follow-up questions.</li>
+        <li><strong>Challenge:</strong> Building a seamless, real-time user interface that feels like a modern messaging app.</li>
+        <li><strong>Solution:</strong> Developed the UI with React and Tailwind CSS, using state management to instantly render messages. An asynchronous function manages API calls, displaying a loading indicator while the chatbot "thinks" to enhance user experience.</li>
+      </ul>
+    `,
+    tags: ['React', 'TypeScript', 'AI/ML', 'NLP API', 'Tailwind CSS'],
+    imageUrl: 'https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80&w=2070&auto=format&fit=crop',
+    liveUrl: 'https://chatbot-git-main-mphilemnisis-projects.vercel.app/',
     sourceUrl: '#',
   },
   {
-    title: 'Project Management Tool',
-    description: 'A Kanban-style project management app with drag-and-drop functionality, user authentication, and real-time collaboration features.',
-    tags: ['React', 'Firebase', 'Redux Toolkit', 'Framer Motion'],
-    imageUrl: 'https://picsum.photos/seed/project3/800/600',
-    liveUrl: '#',
+    title: 'AI Resume Builder',
+    description: 'An innovative tool that leverages generative AI to help users create professional, tailored resumes by suggesting and generating high-quality content.',
+    detailedDescription: `
+      <h4 class="text-lg font-bold text-light mb-2">Technical Challenges & Solutions:</h4>
+      <ul class="list-disc list-inside space-y-2 text-medium">
+        <li><strong>Challenge:</strong> Generating high-quality, relevant resume content from minimal user input.</li>
+        <li><strong>Solution:</strong> Employed a sophisticated generative AI model with carefully engineered prompts. The system requests specific resume sections (e.g., summary, experience bullet points) based on user-provided keywords, ensuring structured and impactful output.</li>
+        <li><strong>Challenge:</strong> Creating a flexible and intuitive resume editor with a live preview.</li>
+        <li><strong>Solution:</strong> Built a dynamic interface using React where users can add, edit, and reorder sections. State was managed meticulously to reflect changes instantly on a live preview component, providing immediate visual feedback.</li>
+      </ul>
+    `,
+    tags: ['React', 'Next.js', 'Generative AI', 'UI/UX Design', 'PDF Generation'],
+    imageUrl: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2070&auto=format&fit=crop',
+    liveUrl: 'https://ai-resume-builder-one-phi.vercel.app/',
     sourceUrl: '#',
   },
 ];
 
-const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
+const ProjectDetailModal: React.FC<{ project: Project; onClose: () => void }> = ({ project, onClose }) => {
   return (
-    <div className="bg-secondary rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col transform hover:scale-105">
+    <div className="fixed inset-0 bg-primary bg-opacity-90 z-50 flex items-center justify-center p-4" onClick={onClose}>
+      <div className="bg-secondary rounded-lg shadow-2xl max-w-3xl w-full max-h-[90vh] overflow-y-auto" onClick={(e) => e.stopPropagation()}>
+        <div className="p-6 md:p-8 relative">
+          <button onClick={onClose} className="absolute top-4 right-4 text-medium hover:text-accent transition-colors">
+            <XIcon className="w-8 h-8" />
+          </button>
+          <img src={project.imageUrl} alt={project.title} className="w-full h-64 object-cover rounded-lg mb-6" />
+          <h2 className="text-3xl font-bold text-light mb-2">{project.title}</h2>
+          <div className="flex flex-wrap gap-2 mb-4">
+            {project.tags.map((tag) => (
+              <span key={tag} className="text-sm bg-primary text-accent font-semibold px-3 py-1 rounded-full">{tag}</span>
+            ))}
+          </div>
+          <p className="text-medium mb-6">{project.description}</p>
+          {project.detailedDescription && (
+            <div dangerouslySetInnerHTML={{ __html: project.detailedDescription }} />
+          )}
+          <div className="mt-6 flex justify-end space-x-4">
+            {project.sourceUrl && (
+              <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-medium hover:text-accent transition-colors">
+                <GitHubIcon className="w-8 h-8" />
+              </a>
+            )}
+            {project.liveUrl && (
+              <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-medium hover:text-accent transition-colors">
+                <ExternalLinkIcon className="w-8 h-8" />
+              </a>
+            )}
+          </div>
+        </div>
+      </div>
+    </div>
+  );
+};
+
+
+const ProjectCard: React.FC<{ project: Project; onClick: () => void }> = ({ project, onClick }) => {
+  return (
+    <div 
+      className="bg-secondary rounded-lg overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-300 flex flex-col transform hover:scale-105 cursor-pointer"
+      onClick={onClick}
+    >
       <img src={project.imageUrl} alt={project.title} className="w-full h-56 object-cover" />
       <div className="p-6 flex flex-col flex-grow">
         <h3 className="text-xl font-bold text-light mb-2">{project.title}</h3>
@@ -45,12 +113,12 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
         <p className="text-medium flex-grow mb-4">{project.description}</p>
         <div className="mt-auto flex justify-end space-x-4">
           {project.sourceUrl && (
-            <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-medium hover:text-accent transition-colors">
+            <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="text-medium hover:text-accent transition-colors" onClick={(e) => e.stopPropagation()}>
               <GitHubIcon className="w-6 h-6" />
             </a>
           )}
           {project.liveUrl && (
-            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-medium hover:text-accent transition-colors">
+            <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="text-medium hover:text-accent transition-colors" onClick={(e) => e.stopPropagation()}>
               <ExternalLinkIcon className="w-6 h-6" />
             </a>
           )}
@@ -62,14 +130,50 @@ const ProjectCard: React.FC<{ project: Project }> = ({ project }) => {
 
 
 const Projects: React.FC = () => {
+  const [selectedTag, setSelectedTag] = useState('All');
+  const [selectedProject, setSelectedProject] = useState<Project | null>(null);
+
+  const allTags = useMemo(() => {
+    const tags = new Set<string>();
+    projectsData.forEach(project => {
+      project.tags.forEach(tag => tags.add(tag));
+    });
+    return ['All', ...Array.from(tags)];
+  }, []);
+
+  const filteredProjects = useMemo(() => {
+    if (selectedTag === 'All') {
+      return projectsData;
+    }
+    return projectsData.filter(project => project.tags.includes(selectedTag));
+  }, [selectedTag]);
+
   return (
-    <Section id="projects" title="My Projects">
-      <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-        {projectsData.map((project) => (
-          <ProjectCard key={project.title} project={project} />
-        ))}
-      </div>
-    </Section>
+    <>
+      <Section id="projects" title="My Projects">
+        <div className="flex flex-wrap justify-center gap-2 md:gap-4 mb-12">
+          {allTags.map(tag => (
+            <button
+              key={tag}
+              onClick={() => setSelectedTag(tag)}
+              className={`font-medium py-2 px-4 rounded-full transition-colors duration-300 ${
+                selectedTag === tag
+                  ? 'bg-accent text-primary'
+                  : 'bg-secondary text-medium hover:bg-accent/80 hover:text-primary'
+              }`}
+            >
+              {tag}
+            </button>
+          ))}
+        </div>
+        <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          {filteredProjects.map((project) => (
+            <ProjectCard key={project.title} project={project} onClick={() => setSelectedProject(project)} />
+          ))}
+        </div>
+      </Section>
+      {selectedProject && <ProjectDetailModal project={selectedProject} onClose={() => setSelectedProject(null)} />}
+    </>
   );
 };
 

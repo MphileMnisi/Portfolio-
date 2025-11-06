@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import Section from './Section';
 import { GitHubIcon, LinkedInIcon, MailIcon } from './icons/Icons';
@@ -40,9 +39,9 @@ const Contact: React.FC = () => {
           <div className="flex flex-col justify-center items-center space-y-6">
             <h3 className="text-2xl font-bold">Or find me on</h3>
             <div className="flex space-x-8">
-              <a href="#" className="text-medium hover:text-accent transition-colors"><MailIcon className="w-10 h-10" /></a>
-              <a href="#" className="text-medium hover:text-accent transition-colors"><GitHubIcon className="w-10 h-10" /></a>
-              <a href="#" className="text-medium hover:text-accent transition-colors"><LinkedInIcon className="w-10 h-10" /></a>
+              <a href="mailto:nkosimphile.mnisi@example.com" target="_blank" rel="noopener noreferrer" className="text-medium hover:text-accent transition-colors"><MailIcon className="w-10 h-10" /></a>
+              <a href="https://github.com/nkosimphile-mnisi" target="_blank" rel="noopener noreferrer" className="text-medium hover:text-accent transition-colors"><GitHubIcon className="w-10 h-10" /></a>
+              <a href="https://linkedin.com/in/nkosimphile-mnisi" target="_blank" rel="noopener noreferrer" className="text-medium hover:text-accent transition-colors"><LinkedInIcon className="w-10 h-10" /></a>
             </div>
           </div>
         </div>
