@@ -28,10 +28,15 @@
               blink: {
                 '0%, 100%': { borderColor: 'transparent' },
                 '50%': { borderColor: '#4fd1c5' },
+              },
+              fadeIn: {
+                '0%': { opacity: '0', transform: 'translateY(10px)' },
+                '100%': { opacity: '1', transform: 'translateY(0)' },
               }
             },
             animation: {
               blink: 'blink 0.8s step-end infinite',
+              'fade-in': 'fadeIn 0.5s ease-out forwards',
             }
           }
         }
@@ -39,7 +44,7 @@
     </script>
     <style>
       body {
-        background-image: url('https://images.unsplash.com/photo-1550745165-9bc0b252726a?q=80&w=2070&auto=format&fit=crop');
+        background-image: url('https://images.unsplash.com/photo-1518770660439-4636190af475?q=80&w=2070&auto=format&fit=crop');
         background-size: cover;
         background-position: center;
         background-attachment: fixed;

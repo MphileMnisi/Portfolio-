@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import Section from './Section';
 
 const techSkills = [
@@ -14,6 +14,35 @@ const softSkills = [
 
 
 const About: React.FC = () => {
+  const skillsRef = useRef<HTMLDivElement>(null);
+  const [skillsInView, setSkillsInView] = useState(false);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setSkillsInView(true);
+          observer.unobserve(entry.target);
+        }
+      },
+      {
+        rootMargin: '0px',
+        threshold: 0.2,
+      }
+    );
+
+    const currentRef = skillsRef.current;
+    if (currentRef) {
+      observer.observe(currentRef);
+    }
+
+    return () => {
+      if (currentRef) {
+        observer.unobserve(currentRef);
+      }
+    };
+  }, []);
+
   return (
     <Section id="about" title="About Me">
       <div className="grid md:grid-cols-5 gap-12 items-center">
@@ -30,24 +59,34 @@ const About: React.FC = () => {
           />
         </div>
       </div>
-      <div className="mt-16">
-        <h3 className="text-2xl font-bold text-center mb-8 text-primary dark:text-light">My Tech Stack</h3>
-        <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-          {techSkills.map((skill) => (
-            <span key={skill} className="bg-gray-100 dark:bg-secondary text-accent font-medium py-2 px-4 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:bg-accent hover:text-primary cursor-pointer">
-              {skill}
-            </span>
-          ))}
+      <div ref={skillsRef}>
+        <div className="mt-16">
+          <h3 className="text-2xl font-bold text-center mb-8 text-primary dark:text-light">My Tech Stack</h3>
+          <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+            {techSkills.map((skill, index) => (
+              <span 
+                key={skill} 
+                className={`bg-gray-100 dark:bg-secondary text-accent font-medium py-2 px-4 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:bg-accent hover:text-primary cursor-pointer ${skillsInView ? 'animate-fade-in' : 'opacity-0'}`}
+                style={{ animationDelay: `${index * 75}ms` }}
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
         </div>
-      </div>
-       <div className="mt-16">
-        <h3 className="text-2xl font-bold text-center mb-8 text-primary dark:text-light">Soft Skills</h3>
-        <div className="flex flex-wrap justify-center gap-3 md:gap-4">
-          {softSkills.map((skill) => (
-            <span key={skill} className="bg-gray-100 dark:bg-secondary text-gray-800 dark:text-light font-medium py-2 px-4 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:bg-gray-600 dark:hover:bg-light hover:text-white dark:hover:text-primary cursor-pointer">
-              {skill}
-            </span>
-          ))}
+         <div className="mt-16">
+          <h3 className="text-2xl font-bold text-center mb-8 text-primary dark:text-light">Soft Skills</h3>
+          <div className="flex flex-wrap justify-center gap-3 md:gap-4">
+            {softSkills.map((skill, index) => (
+              <span 
+                key={skill} 
+                className={`bg-gray-100 dark:bg-secondary text-gray-800 dark:text-light font-medium py-2 px-4 rounded-full transition-all duration-300 transform hover:-translate-y-1 hover:bg-gray-600 dark:hover:bg-light hover:text-white dark:hover:text-primary cursor-pointer ${skillsInView ? 'animate-fade-in' : 'opacity-0'}`}
+                style={{ animationDelay: `${(techSkills.length + index) * 75}ms` }}
+              >
+                {skill}
+              </span>
+            ))}
+          </div>
         </div>
       </div>
     </Section>
