@@ -37,7 +37,7 @@ const projectsData: Project[] = [
     `,
     tags: ['React', 'TypeScript', 'AI/ML', 'NLP API', 'Tailwind CSS'],
     imageUrl: 'https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80&w=2070&auto=format&fit=crop',
-    liveUrl: 'https://chatbot-git-main-mphilemnisis-projects.vercel.app/',
+    liveUrl: 'https://chatbot-seven-orcin-94.vercel.app/',
     sourceUrl: 'https://github.com/nkosimphile-mnisi/conversational-ai-chatbot',
   },
   {
