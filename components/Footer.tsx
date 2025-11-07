@@ -8,7 +8,7 @@ const Footer: React.FC = () => {
         <div className="flex justify-center space-x-6 mb-4">
           <a href="mailto:nkosimphilem37@gmail.com" aria-label="Email" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors"><MailIcon className="w-6 h-6" /></a>
           <a href="https://github.com/MphileMnisi" aria-label="GitHub" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors"><GitHubIcon className="w-6 h-6" /></a>
-          <a href="https://www.linkedin.com/in/nkosimphile-siyabonga-mnisi-0a9a33389" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors"><LinkedInIcon className="w-6 h-6" /></a>
+          <a href="https://www.linkedin.com/in/nkosimphile-siyabonga-mnisi-0a9a33389/" aria-label="LinkedIn" target="_blank" rel="noopener noreferrer" className="hover:text-accent transition-colors"><LinkedInIcon className="w-6 h-6" /></a>
         </div>
         <p>&copy; {new Date().getFullYear()} Nkosimphile Mnisi. All Rights Reserved.</p>
         <p className="text-sm mt-2">Designed & Built by Nkosimphile Mnisi</p>

@@ -41,7 +41,7 @@ const Contact: React.FC = () => {
             <div className="flex space-x-8">
               <a href="mailto:nkosimphilem37@gmail.com" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-medium hover:text-accent transition-colors"><MailIcon className="w-10 h-10" /></a>
               <a href="https://github.com/MphileMnisi" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-medium hover:text-accent transition-colors"><GitHubIcon className="w-10 h-10" /></a>
-              <a href="https://www.linkedin.com/in/nkosimphile-siyabonga-mnisi-0a9a33389" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-medium hover:text-accent transition-colors"><LinkedInIcon className="w-10 h-10" /></a>
+              <a href="https://www.linkedin.com/in/nkosimphile-siyabonga-mnisi-0a9a33389/" target="_blank" rel="noopener noreferrer" className="text-gray-600 dark:text-medium hover:text-accent transition-colors"><LinkedInIcon className="w-10 h-10" /></a>
             </div>
           </div>
         </div>
