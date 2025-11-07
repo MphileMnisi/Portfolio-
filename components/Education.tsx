@@ -19,7 +19,7 @@ const educationData: EducationItem[] = [
     duration: '2017 - 2021',
     details: [
       'Graduated with a Bachelor\'s degree pass, enabling university entrance.',
-      'Excelled in Mathematics, Physical Sciences, and Information Technology subjects.',
+      'Excelled in Accounting, Business, Economics and Mathematics subjects.',
       'Participated in the school\'s science and technology club.',
     ],
   },
