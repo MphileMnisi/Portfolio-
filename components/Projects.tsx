@@ -1,3 +1,4 @@
+
 import React, { useState, useMemo } from 'react';
 import { Project } from '../types';
 import Section from './Section';
@@ -78,17 +79,6 @@ const ProjectDetailModal: React.FC<{ project: Project; onClose: () => void }> = 
             <div dangerouslySetInnerHTML={{ __html: project.detailedDescription }} />
           )}
           <div className="mt-8 flex flex-wrap justify-end gap-4">
-            {project.sourceUrl && (
-              <a
-                href={project.sourceUrl}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="inline-flex items-center gap-2 bg-gray-100 dark:bg-primary text-gray-800 dark:text-light font-semibold py-2 px-4 rounded-lg hover:bg-gray-200 dark:hover:bg-gray-700 transition-colors"
-              >
-                <GitHubIcon className="w-5 h-5" />
-                <span>Source Code</span>
-              </a>
-            )}
             {project.liveUrl && (
               <a
                 href={project.liveUrl}
@@ -126,12 +116,6 @@ const ProjectCard: React.FC<{ project: Project; onClick: () => void }> = ({ proj
         </div>
         <p className="text-gray-600 dark:text-medium flex-grow mb-4">{project.description}</p>
         <div className="mt-auto flex justify-end items-center gap-4">
-          {project.sourceUrl && (
-            <a href={project.sourceUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-medium hover:text-accent transition-colors" onClick={(e) => e.stopPropagation()}>
-              <GitHubIcon className="w-5 h-5" />
-              Source
-            </a>
-          )}
           {project.liveUrl && (
             <a href={project.liveUrl} target="_blank" rel="noopener noreferrer" className="flex items-center gap-2 text-sm font-medium text-gray-600 dark:text-medium hover:text-accent transition-colors" onClick={(e) => e.stopPropagation()}>
               <ExternalLinkIcon className="w-5 h-5" />
