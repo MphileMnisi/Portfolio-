@@ -57,6 +57,23 @@ const projectsData: Project[] = [
     liveUrl: 'https://ai-resume-builder-one-phi.vercel.app/',
     sourceUrl: 'https://github.com/nkosimphile-mnisi/ai-resume-builder',
   },
+  {
+    title: 'SA Grade 12 Marker',
+    description: 'An automated system that marks Grade 12 scripts and provides instant, detailed feedback to students, streamlining the assessment process.',
+    detailedDescription: `
+      <h4 class="text-lg font-bold text-primary dark:text-light mb-2">Technical Challenges & Solutions:</h4>
+      <ul class="list-disc list-inside space-y-2 text-gray-600 dark:text-medium">
+        <li><strong>Challenge:</strong> Developing a system capable of accurately interpreting and marking diverse, handwritten student responses from exam scripts.</li>
+        <li><strong>Solution:</strong> Integrated an advanced Optical Character Recognition (OCR) service to digitize handwritten text. Subsequently, a fine-tuned AI model processes the text, comparing it against a pre-defined marking rubric to assess correctness and assign marks.</li>
+        <li><strong>Challenge:</strong> Providing instant, meaningful, and educational feedback instead of just a score.</li>
+        <li><strong>Solution:</strong> Leveraged a generative AI to analyze incorrect answers and produce personalized feedback. The system explains the specific errors, references relevant concepts, and suggests areas for improvement, turning assessment into a powerful learning tool.</li>
+      </ul>
+    `,
+    tags: ['React', 'Next.js', 'AI/ML', 'OCR', 'Education Tech'],
+    imageUrl: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop',
+    liveUrl: 'https://sa-grade-12-marker.vercel.app/',
+    sourceUrl: 'https://github.com/nkosimphile-mnisi/sa-grade-12-marker',
+  },
 ];
 
 const ProjectDetailModal: React.FC<{ project: Project; onClose: () => void }> = ({ project, onClose }) => {
