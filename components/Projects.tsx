@@ -101,7 +101,7 @@ const ProjectDetailModal: React.FC<{ project: Project; onClose: () => void }> = 
               className="inline-flex items-center gap-2 bg-gray-200 dark:bg-gray-700 text-primary dark:text-light font-bold py-2 px-4 rounded-lg hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors"
             >
               <BackArrowIcon className="w-5 h-5" />
-              <span>Go Back</span>
+              <span>Back to Projects</span>
             </button>
             {project.liveUrl && (
               <a
