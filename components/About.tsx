@@ -53,7 +53,7 @@ const About: React.FC = () => {
         </div>
         <div className="md:col-span-2 flex justify-center">
           <img
-            src="https://media.licdn.com/dms/image/v2/D4E03AQHfe7l5uB6Fqw/profile-displayphoto-crop_800_800/B4EZpKwsNPKkAI-/0/1762190874743?e=1764201600&v=beta&t=tyC39gdspkc0gqWa3WksLDrNGUM85cMT2mdadkhJdc8"
+            src="https://media.licdn.com/dms/image/v2/D4E03AQHfe7l5uB6Fqw/profile-displayphoto-scale_200_200/B4EZpKwsNPKkAY-/0/1762190874828?e=1766620800&v=beta&t=EqgUVzQ6UU_WelJVlZyM0jPNpZ8RxqsL8lldo2JZvgQ"
             alt="Nkosimphile Mnisi"
             className="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-2xl border-4 border-white dark:border-secondary"
           />
