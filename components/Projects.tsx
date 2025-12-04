@@ -74,6 +74,23 @@ const projectsData: Project[] = [
     liveUrl: 'https://sa-grade-12-marker.vercel.app/',
     sourceUrl: 'https://github.com/nkosimphile-mnisi/sa-grade-12-marker',
   },
+  {
+    title: 'SentiCoreX',
+    description: 'An AI-powered sentiment analysis tool designed to help businesses make sense of thousands of comments received daily across multiple channels.',
+    detailedDescription: `
+      <h4 class="text-lg font-bold text-primary dark:text-light mb-2">Technical Challenges & Solutions:</h4>
+      <ul class="list-disc list-inside space-y-2 text-gray-600 dark:text-medium">
+        <li><strong>Challenge:</strong> Processing and classifying vast amounts of unstructured feedback data in real-time.</li>
+        <li><strong>Solution:</strong> Leveraged advanced Natural Language Processing (NLP) algorithms to accurately detect sentiment polarity (positive, negative, neutral). The system scales to handle high-volume inputs without compromising performance.</li>
+        <li><strong>Challenge:</strong> Presenting complex sentiment data in an understandable format for business owners.</li>
+        <li><strong>Solution:</strong> Built an intuitive dashboard with dynamic data visualization components. This enables users to easily spot trends, monitor brand reputation, and make data-driven decisions based on customer feedback.</li>
+      </ul>
+    `,
+    tags: ['React', 'AI/ML', 'Sentiment Analysis', 'Data Visualization', 'NLP'],
+    imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
+    liveUrl: 'https://senticore-x.vercel.app/',
+    sourceUrl: 'https://github.com/nkosimphile-mnisi/senticore-x',
+  },
 ];
 
 const ProjectDetailModal: React.FC<{ project: Project; onClose: () => void }> = ({ project, onClose }) => {
