@@ -20,7 +20,7 @@ const projectsData: Project[] = [
     `,
     tags: ['React', 'Next.js', 'Firebase', 'Data Scraping', 'Algorithm'],
     imageUrl: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=2148&auto=format&fit=crop',
-    liveUrl: 'https://sa-school-recommendation-system.vercel.app/',
+    liveUrl: 'https://recommender-hshy.vercel.app/',
     sourceUrl: 'https://github.com/nkosimphile-mnisi/sa-school-recommendation-system',
   },
   {
