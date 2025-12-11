@@ -9,13 +9,41 @@ const projectsData: Project[] = [
     title: 'SA School Recommendation System',
     description: 'An intelligent platform designed to assist users in finding the best-fit schools in South Africa based on personalized criteria.',
     detailedDescription: `
-      <h4 class="text-lg font-bold mb-2">Technical Challenges & Solutions:</h4>
-      <ul class="list-disc list-inside space-y-2">
-        <li><strong>Challenge:</strong> Sourcing and structuring a comprehensive dataset of South African schools.</li>
-        <li><strong>Solution:</strong> Developed a data aggregation script and structured the information in a NoSQL database (Firebase).</li>
-        <li><strong>Challenge:</strong> Designing a recommendation algorithm.</li>
-        <li><strong>Solution:</strong> Implemented a content-based filtering system with a scoring mechanism.</li>
-      </ul>
+      <div class="space-y-6 text-gray-700 dark:text-gray-300">
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Project Overview</h4>
+          <p>A comprehensive data-driven platform designed to simplify the school selection process for South African parents. By aggregating data from various educational institutions, the system provides a centralized hub for comparing schools based on performance, location, fees, and extra-curricular offerings.</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Key Features</h4>
+          <ul class="list-disc list-inside space-y-1 ml-2">
+            <li><strong>Personalized Matching:</strong> Algorithm-based recommendations matching student needs with school facilities.</li>
+            <li><strong>Geolocation Services:</strong> Interactive maps to find schools within a specific radius.</li>
+            <li><strong>Comparative Analytics:</strong> Side-by-side comparison of school fees, pass rates, and facilities.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Technical Challenges & Solutions</h4>
+          <div class="grid gap-4">
+            <div class="bg-gray-50 dark:bg-white/5 p-4 rounded-lg border-l-4 border-accent">
+              <p class="font-semibold text-primary dark:text-white">Challenge: Data Fragmentation</p>
+              <p class="text-sm mt-1">Sourcing accurate and uniform data for thousands of schools across different provinces was difficult due to fragmented public records.</p>
+              <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+                   <p class="font-semibold text-accent">Solution:</p>
+                   <p class="text-sm mt-1">Developed a custom data aggregation script to scrape and normalize data from multiple government portals, structuring it into a flexible Firebase NoSQL database.</p>
+              </div>
+            </div>
+             <div class="bg-gray-50 dark:bg-white/5 p-4 rounded-lg border-l-4 border-accent">
+              <p class="font-semibold text-primary dark:text-white">Challenge: Recommendation Logic</p>
+              <p class="text-sm mt-1">Creating a scoring system that accurately reflects user priorities without bias.</p>
+              <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+                   <p class="font-semibold text-accent">Solution:</p>
+                   <p class="text-sm mt-1">Implemented a weighted content-based filtering algorithm that dynamically adjusts scores based on user-defined importance factors.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     `,
     tags: ['React', 'Next.js', 'Firebase', 'Data Scraping'],
     imageUrl: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=2148&auto=format&fit=crop',
@@ -27,13 +55,41 @@ const projectsData: Project[] = [
     title: 'Conversational AI Chatbot',
     description: 'A responsive and intelligent chatbot that provides human-like, context-aware responses using modern NLP.',
     detailedDescription: `
-      <h4 class="text-lg font-bold mb-2">Technical Challenges & Solutions:</h4>
-      <ul class="list-disc list-inside space-y-2">
-        <li><strong>Challenge:</strong> Achieving natural, context-aware conversations.</li>
-        <li><strong>Solution:</strong> Integrated a powerful third-party NLP API to handle language understanding.</li>
-        <li><strong>Challenge:</strong> Real-time user interface.</li>
-        <li><strong>Solution:</strong> Developed a reactive UI with instant message rendering and loading states.</li>
-      </ul>
+      <div class="space-y-6 text-gray-700 dark:text-gray-300">
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Project Overview</h4>
+          <p>This project implements a sophisticated conversational interface powered by large language models. It is designed to simulate natural human interaction, capable of understanding context, tone, and intent to provide relevant and helpful responses in real-time.</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Key Features</h4>
+          <ul class="list-disc list-inside space-y-1 ml-2">
+            <li><strong>Context Retention:</strong> Maintains conversation history to answer follow-up questions accurately.</li>
+            <li><strong>Streaming Responses:</strong> Real-time text generation effects for a fluid user experience.</li>
+            <li><strong>Multi-Modal Support:</strong> Capable of processing and responding to text inputs with potential for future voice integration.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Technical Challenges & Solutions</h4>
+          <div class="grid gap-4">
+            <div class="bg-gray-50 dark:bg-white/5 p-4 rounded-lg border-l-4 border-accent">
+              <p class="font-semibold text-primary dark:text-white">Challenge: Latency Management</p>
+              <p class="text-sm mt-1">Ensuring the chatbot feels responsive despite the processing time required by LLMs.</p>
+              <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+                   <p class="font-semibold text-accent">Solution:</p>
+                   <p class="text-sm mt-1">Implemented response streaming to display chunks of text as they are generated, rather than waiting for the full response, significantly reducing perceived latency.</p>
+              </div>
+            </div>
+            <div class="bg-gray-50 dark:bg-white/5 p-4 rounded-lg border-l-4 border-accent">
+              <p class="font-semibold text-primary dark:text-white">Challenge: Context Window Limits</p>
+              <p class="text-sm mt-1">Managing long conversations without exceeding token limits of the underlying API.</p>
+              <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+                   <p class="font-semibold text-accent">Solution:</p>
+                   <p class="text-sm mt-1">Developed a sliding window context manager that summarizes older parts of the conversation to retain key information while freeing up tokens.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     `,
     tags: ['React', 'TypeScript', 'AI/ML', 'NLP API'],
     imageUrl: 'https://images.unsplash.com/photo-1534536281715-e28d76689b4d?q=80&w=2070&auto=format&fit=crop',
@@ -43,15 +99,44 @@ const projectsData: Project[] = [
   },
   {
     title: 'AI Resume Builder',
-    description: 'An innovative tool that leverages generative AI to help users create professional, tailored resumes.',
+    description: 'An innovative tool that leverages generative AI to help users create ATS-optimized resumes with targeted keywords.',
     detailedDescription: `
-      <h4 class="text-lg font-bold mb-2">Technical Challenges & Solutions:</h4>
-      <ul class="list-disc list-inside space-y-2">
-        <li><strong>Challenge:</strong> Generating high-quality resume content.</li>
-        <li><strong>Solution:</strong> Employed a sophisticated generative AI model with engineered prompts.</li>
-        <li><strong>Challenge:</strong> Flexible resume editor.</li>
-        <li><strong>Solution:</strong> Built a dynamic interface with live preview functionality.</li>
-      </ul>
+      <div class="space-y-6 text-gray-700 dark:text-gray-300">
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Project Overview</h4>
+          <p>A web-based application that empowers job seekers to create professional, ATS-friendly resumes. By utilizing generative AI, the tool analyzes job descriptions and suggests tailored content, ensuring the user's resume highlights the most relevant skills and experiences.</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Key Features</h4>
+          <ul class="list-disc list-inside space-y-1 ml-2">
+            <li><strong>ATS Optimization:</strong> Automatically suggests keywords found in job descriptions to pass Applicant Tracking Systems.</li>
+            <li><strong>AI Content Generation:</strong> Generates professional bullet points for work experience based on role titles.</li>
+            <li><strong>Real-time Preview:</strong> Instant visualization of the resume as data is entered or modified.</li>
+            <li><strong>PDF Export:</strong> High-quality, print-ready PDF generation.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Technical Challenges & Solutions</h4>
+          <div class="grid gap-4">
+            <div class="bg-gray-50 dark:bg-white/5 p-4 rounded-lg border-l-4 border-accent">
+              <p class="font-semibold text-primary dark:text-white">Challenge: Formatting Consistency</p>
+              <p class="text-sm mt-1">Ensuring the generated PDF matches the on-screen preview pixel-perfectly across different browsers.</p>
+              <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+                   <p class="font-semibold text-accent">Solution:</p>
+                   <p class="text-sm mt-1">Utilized a dedicated React-to-PDF library that renders the DOM structure directly to canvas before conversion, ensuring 1:1 fidelity.</p>
+              </div>
+            </div>
+             <div class="bg-gray-50 dark:bg-white/5 p-4 rounded-lg border-l-4 border-accent">
+              <p class="font-semibold text-primary dark:text-white">Challenge: AI Hallucinations</p>
+              <p class="text-sm mt-1"> preventing the AI from inventing skills or experiences the user doesn't have.</p>
+              <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+                   <p class="font-semibold text-accent">Solution:</p>
+                   <p class="text-sm mt-1">Implemented strict system prompting and "human-in-the-loop" UI where users must review and approve all AI-generated suggestions before they are added.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     `,
     tags: ['React', 'Next.js', 'Generative AI', 'PDF Gen'],
     imageUrl: 'https://images.unsplash.com/photo-1586281380349-632531db7ed4?q=80&w=2070&auto=format&fit=crop',
@@ -63,13 +148,41 @@ const projectsData: Project[] = [
     title: 'SA Grade 12 Marker',
     description: 'An automated system that marks Grade 12 scripts and provides instant, detailed feedback to students.',
     detailedDescription: `
-      <h4 class="text-lg font-bold mb-2">Technical Challenges & Solutions:</h4>
-      <ul class="list-disc list-inside space-y-2">
-        <li><strong>Challenge:</strong> Interpreting handwritten student responses.</li>
-        <li><strong>Solution:</strong> Integrated advanced OCR services to digitize text.</li>
-        <li><strong>Challenge:</strong> Providing educational feedback.</li>
-        <li><strong>Solution:</strong> Leveraged generative AI to analyze errors and suggest improvements.</li>
-      </ul>
+       <div class="space-y-6 text-gray-700 dark:text-gray-300">
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Project Overview</h4>
+          <p>An EdTech solution aimed at reducing the administrative burden on educators and providing instant feedback to students. The system digitizes handwritten exam scripts and uses AI to grade them against a memorandum, providing detailed feedback on errors.</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Key Features</h4>
+          <ul class="list-disc list-inside space-y-1 ml-2">
+            <li><strong>Handwriting Recognition (OCR):</strong> Converts handwritten student answers into digital text.</li>
+            <li><strong>Automated Grading:</strong> Compares student answers to the memo using semantic similarity.</li>
+            <li><strong>Detailed Feedback Loop:</strong> Explains exactly where and why marks were lost.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Technical Challenges & Solutions</h4>
+          <div class="grid gap-4">
+            <div class="bg-gray-50 dark:bg-white/5 p-4 rounded-lg border-l-4 border-accent">
+              <p class="font-semibold text-primary dark:text-white">Challenge: Handwriting Legibility</p>
+              <p class="text-sm mt-1">Accurately deciphering varied and messy student handwriting styles.</p>
+              <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+                   <p class="font-semibold text-accent">Solution:</p>
+                   <p class="text-sm mt-1">Integrated a specialized handwriting OCR API and implemented a confidence threshold system that flags ambiguous text for manual review.</p>
+              </div>
+            </div>
+            <div class="bg-gray-50 dark:bg-white/5 p-4 rounded-lg border-l-4 border-accent">
+              <p class="font-semibold text-primary dark:text-white">Challenge: Semantic Grading</p>
+              <p class="text-sm mt-1">Grading answers that are correct in meaning but phrased differently from the memo.</p>
+              <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+                   <p class="font-semibold text-accent">Solution:</p>
+                   <p class="text-sm mt-1">Used cosine similarity on vector embeddings of the answers to determine semantic closeness rather than relying on strict keyword matching.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     `,
     tags: ['React', 'Next.js', 'AI/ML', 'OCR'],
     imageUrl: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop',
@@ -81,13 +194,41 @@ const projectsData: Project[] = [
     title: 'SentiCoreX',
     description: 'AI-powered sentiment analysis tool for business intelligence and customer feedback monitoring.',
     detailedDescription: `
-      <h4 class="text-lg font-bold mb-2">Technical Challenges & Solutions:</h4>
-      <ul class="list-disc list-inside space-y-2">
-        <li><strong>Challenge:</strong> Processing unstructured feedback data in real-time.</li>
-        <li><strong>Solution:</strong> Leveraged NLP algorithms to accurately detect sentiment polarity.</li>
-        <li><strong>Challenge:</strong> Data visualization.</li>
-        <li><strong>Solution:</strong> Built an intuitive dashboard with dynamic charts.</li>
-      </ul>
+      <div class="space-y-6 text-gray-700 dark:text-gray-300">
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Project Overview</h4>
+          <p>SentiCoreX is a powerful analytics tool built for businesses to decode customer sentiment at scale. It ingests feedback from multiple channels (social media, reviews, emails) and provides actionable insights through visual dashboards.</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Key Features</h4>
+          <ul class="list-disc list-inside space-y-1 ml-2">
+            <li><strong>Multi-Channel Ingestion:</strong> Aggregates data from Twitter/X, Facebook, and Google Reviews.</li>
+            <li><strong>Real-time Analysis:</strong> Processes text streams instantly to detect mood shifts.</li>
+            <li><strong>Visual Dashboards:</strong> Interactive charts showing sentiment trends over time.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Technical Challenges & Solutions</h4>
+          <div class="grid gap-4">
+            <div class="bg-gray-50 dark:bg-white/5 p-4 rounded-lg border-l-4 border-accent">
+              <p class="font-semibold text-primary dark:text-white">Challenge: Nuance & Sarcasm</p>
+              <p class="text-sm mt-1">Accurately identifying sarcasm or double negatives in customer feedback.</p>
+              <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+                   <p class="font-semibold text-accent">Solution:</p>
+                   <p class="text-sm mt-1">Fine-tuned a BERT-based transformer model on a dataset of sarcastic comments to improve classification accuracy in edge cases.</p>
+              </div>
+            </div>
+             <div class="bg-gray-50 dark:bg-white/5 p-4 rounded-lg border-l-4 border-accent">
+              <p class="font-semibold text-primary dark:text-white">Challenge: Data Visualization Performance</p>
+              <p class="text-sm mt-1">Rendering thousands of data points on charts without freezing the browser.</p>
+              <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+                   <p class="font-semibold text-accent">Solution:</p>
+                   <p class="text-sm mt-1">Utilized WebGL-powered charting libraries and implemented data sampling techniques to maintain 60fps performance during interaction.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
     `,
     tags: ['React', 'AI/ML', 'NLP', 'Data Viz'],
     imageUrl: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2070&auto=format&fit=crop',
