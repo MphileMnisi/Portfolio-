@@ -16,6 +16,7 @@ export interface ExperienceItem {
   company: string;
   duration: string;
   description: string[];
+  logoUrl?: string;
 }
 
 export interface EducationItem {

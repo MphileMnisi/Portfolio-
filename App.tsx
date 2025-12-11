@@ -1,3 +1,4 @@
+
 import React, { useRef, useState, useEffect } from 'react';
 import Header from './components/Header';
 import Hero from './components/Hero';
@@ -6,11 +7,13 @@ import Projects from './components/Projects';
 import Education from './components/Education';
 import Contact from './components/Contact';
 import Footer from './components/Footer';
+import Experience from './components/Experience';
 
 const App: React.FC = () => {
   const [theme, setTheme] = useState('light');
   const homeRef = useRef<HTMLDivElement>(null);
   const aboutRef = useRef<HTMLDivElement>(null);
+  const experienceRef = useRef<HTMLDivElement>(null);
   const projectsRef = useRef<HTMLDivElement>(null);
   const educationRef = useRef<HTMLDivElement>(null);
   const contactRef = useRef<HTMLDivElement>(null);
@@ -30,6 +33,7 @@ const App: React.FC = () => {
   const navRefs = {
     home: homeRef,
     about: aboutRef,
+    experience: experienceRef,
     projects: projectsRef,
     education: educationRef,
     contact: contactRef,
@@ -44,6 +48,9 @@ const App: React.FC = () => {
         </div>
         <div ref={aboutRef}>
           <About />
+        </div>
+        <div ref={experienceRef}>
+          <Experience />
         </div>
         <div ref={projectsRef}>
           <Projects />
