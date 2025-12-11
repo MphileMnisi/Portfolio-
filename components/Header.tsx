@@ -32,6 +32,7 @@ const Header: React.FC<HeaderProps> = ({ navRefs, theme, toggleTheme }) => {
   };
   
   const navLinks = [
+    { name: 'Home', ref: navRefs.home },
     { name: 'About', ref: navRefs.about },
     { name: 'Experience', ref: navRefs.experience },
     { name: 'Projects', ref: navRefs.projects },
@@ -45,7 +46,7 @@ const Header: React.FC<HeaderProps> = ({ navRefs, theme, toggleTheme }) => {
         <div className="container mx-auto px-6 md:px-12 py-4">
           <div className="flex justify-between items-center">
             {/* Logo and Chat Trigger Section */}
-            <div className="flex items-center gap-3 md:gap-4">
+            <div className="flex items-center">
                 <button 
                     onClick={() => setIsChatOpen(!isChatOpen)}
                     className="flex items-center gap-2 bg-accent/10 hover:bg-accent/20 text-accent dark:text-accent font-medium px-3 py-1.5 rounded-full transition-all border border-accent/20 hover:border-accent hover:shadow-sm group"
@@ -54,12 +55,6 @@ const Header: React.FC<HeaderProps> = ({ navRefs, theme, toggleTheme }) => {
                     <RobotIcon className="w-5 h-5 group-hover:animate-bounce" />
                     <span className="hidden sm:inline text-sm">Ask AI</span>
                 </button>
-                <div 
-                    className="text-xl md:text-2xl font-bold cursor-pointer text-accent hover:text-primary dark:hover:text-light transition-colors"
-                    onClick={() => scrollToSection(navRefs.home)}
-                >
-                    Software Developer<span className="text-primary dark:text-light">.</span>
-                </div>
             </div>
 
             {/* Desktop Navigation */}
