@@ -1,3 +1,4 @@
+
 // Fix: Removed a self-import of the `Project` type which was causing a name conflict.
 export interface Project {
   title: string;
@@ -7,6 +8,7 @@ export interface Project {
   imageUrl: string;
   liveUrl?: string;
   sourceUrl?: string;
+  theme?: 'tech' | 'calm' | 'creative' | 'dark' | 'colorful';
 }
 
 export interface ExperienceItem {

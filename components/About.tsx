@@ -55,7 +55,7 @@ const About: React.FC = () => {
           <img
             src="https://media.licdn.com/dms/image/v2/D4E03AQHfe7l5uB6Fqw/profile-displayphoto-crop_800_800/B4EZpKwsNPKkAI-/0/1762190874743?e=1766620800&v=beta&t=Nze3kQFVCjQrnO5_8N0Ad_Zi_N6GY9VhnxgJno3b-RE"
             alt="Nkosimphile Mnisi"
-            className="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-2xl border-4 border-white dark:border-secondary"
+            className="rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-2xl border-4 border-white dark:border-secondary transition-all duration-500 hover:scale-105 hover:shadow-accent/50 hover:border-accent cursor-pointer"
           />
         </div>
       </div>
