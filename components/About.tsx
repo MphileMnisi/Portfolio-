@@ -50,6 +50,12 @@ const getCategoryIcon = (index: number) => {
 const About: React.FC = () => {
   const skillsRef = useRef<HTMLDivElement>(null);
   const [skillsInView, setSkillsInView] = useState(false);
+  const [currentImageIndex, setCurrentImageIndex] = useState(0);
+
+  const profileImages = [
+    "https://media.licdn.com/dms/image/v2/D4E03AQHfe7l5uB6Fqw/profile-displayphoto-crop_800_800/B4EZpKwsNPKkAI-/0/1762190874743?e=1766620800&v=beta&t=Nze3kQFVCjQrnO5_8N0Ad_Zi_N6GY9VhnxgJno3b-RE",
+    "https://static.vecteezy.com/system/resources/previews/030/762/925/large_2x/artificial-intelligence-abstract-background-the-future-of-artificial-intelligence-generative-ai-free-photo.jpg"
+  ];
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -75,6 +81,14 @@ const About: React.FC = () => {
         observer.unobserve(currentRef);
       }
     };
+  }, []);
+
+  // Image rotation logic
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setCurrentImageIndex((prev) => (prev + 1) % profileImages.length);
+    }, 5000); // Switch every 5 seconds
+    return () => clearInterval(interval);
   }, []);
 
   return (
@@ -103,11 +117,18 @@ const About: React.FC = () => {
         </div>
 
         <div className="md:col-span-2 flex justify-center items-center h-full">
-          <img
-            src="https://media.licdn.com/dms/image/v2/D4E03AQHfe7l5uB6Fqw/profile-displayphoto-crop_800_800/B4EZpKwsNPKkAI-/0/1762190874743?e=1766620800&v=beta&t=Nze3kQFVCjQrnO5_8N0Ad_Zi_N6GY9VhnxgJno3b-RE"
-            alt="Nkosimphile Mnisi"
-            className="sticky top-24 rounded-full w-64 h-64 md:w-80 md:h-80 object-cover shadow-2xl border-4 border-white dark:border-secondary transition-all duration-500 hover:scale-105 hover:shadow-accent/50 hover:border-accent cursor-pointer"
-          />
+            <div className="relative w-64 h-64 md:w-80 md:h-80 sticky top-24 rounded-full group cursor-pointer transition-transform duration-500 hover:scale-105">
+                {profileImages.map((src, index) => (
+                    <img
+                        key={src}
+                        src={src}
+                        alt={index === 0 ? "Nkosimphile Mnisi" : "AI Technology Abstract"}
+                        className={`absolute inset-0 w-full h-full rounded-full object-cover shadow-2xl border-4 border-white dark:border-secondary transition-all duration-1000 group-hover:shadow-accent/50 group-hover:border-accent ${
+                            index === currentImageIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
+                        }`}
+                    />
+                ))}
+            </div>
         </div>
       </div>
       
