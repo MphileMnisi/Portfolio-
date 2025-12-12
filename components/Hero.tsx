@@ -15,6 +15,7 @@ const Hero: React.FC = () => {
   
   const containerRef = useRef<HTMLDivElement>(null);
   const contentRef = useRef<HTMLDivElement>(null);
+  const floatingImageRef = useRef<HTMLDivElement>(null);
 
   // Typing effect logic
   useEffect(() => {
@@ -81,6 +82,72 @@ const Hero: React.FC = () => {
           delay: i * 0.2
         });
       });
+      
+      // Floating Card Animation for the Image
+      const floatCard = () => {
+        if (!floatingImageRef.current) return;
+        
+        // Random positions within the viewport (avoiding the very center where text is)
+        // We'll toggle between left and right sides or top/bottom corners
+        const positions = [
+          { top: '15%', left: '10%', rotation: -5 },
+          { top: '20%', right: '10%', left: 'auto', rotation: 5 },
+          { top: '65%', left: '15%', rotation: -3 },
+          { top: '60%', right: '15%', left: 'auto', rotation: 3 }
+        ];
+
+        let currentPosIndex = 0;
+
+        const animateToNextPos = () => {
+          const pos = positions[currentPosIndex];
+          const nextIndex = (currentPosIndex + 1) % positions.length;
+          
+          // Fade In & Move
+          gsap.set(floatingImageRef.current, { 
+            top: pos.top, 
+            left: pos.left, 
+            right: pos.right || 'auto',
+            opacity: 0,
+            scale: 0.8,
+            rotation: pos.rotation - 10 // Start with extra rotation
+          });
+
+          const cardTl = gsap.timeline({
+            onComplete: () => {
+              currentPosIndex = nextIndex;
+              // Schedule next appearance
+              gsap.delayedCall(2, animateToNextPos);
+            }
+          });
+
+          cardTl
+            .to(floatingImageRef.current, {
+              opacity: 1,
+              scale: 1,
+              rotation: pos.rotation,
+              duration: 1,
+              ease: "back.out(1.5)"
+            })
+            .to(floatingImageRef.current, {
+              y: -10,
+              duration: 2,
+              ease: "sine.inOut",
+              yoyo: true,
+              repeat: 1
+            }, "-=0.5")
+            .to(floatingImageRef.current, {
+              opacity: 0,
+              scale: 0.8,
+              y: 20,
+              duration: 0.8,
+              ease: "power2.in"
+            }, "+=0.5");
+        };
+
+        animateToNextPos();
+      };
+
+      floatCard();
 
       // Cursor-Responsive Parallax
       const handleMouseMove = (e: MouseEvent) => {
@@ -131,6 +198,19 @@ const Hero: React.FC = () => {
         
         {/* Shape 5: Center Deep - Large Glow */}
         <div className="hero-shape absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-accent/5 rounded-full blur-3xl -z-10"></div>
+      </div>
+      
+      {/* Floating Image Card */}
+      <div 
+        ref={floatingImageRef}
+        className="absolute w-32 h-32 md:w-48 md:h-48 rounded-xl overflow-hidden shadow-2xl border-4 border-white/30 dark:border-white/10 z-0 pointer-events-none opacity-0"
+        style={{ filter: 'drop-shadow(0 10px 20px rgba(0,0,0,0.2))' }}
+      >
+        <img 
+          src="https://images.stockcake.com/public/c/6/1/c61942d7-9bc6-48a9-9683-5f5a71e87201_large/futuristic-ai-portrait-stockcake.jpg" 
+          alt="Floating Decorative Element" 
+          className="w-full h-full object-cover"
+        />
       </div>
 
       <div ref={contentRef} className="relative z-10 space-y-8 px-4 max-w-4xl mx-auto">
