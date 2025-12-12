@@ -4,7 +4,7 @@ import { EducationItem } from '../types';
 import Section from './Section';
 import { XIcon, BackArrowIcon } from './icons/Icons';
 
-const educationData: EducationItem[] = [
+export const educationData: EducationItem[] = [
   {
     degree: 'National Diploma in Information Technology',
     institution: 'Vaal University of Technology',
@@ -43,7 +43,7 @@ interface Certification {
   iconUrl?: string;
 }
 
-const certifications: Certification[] = [
+export const certifications: Certification[] = [
   {
     name: "AI Bootcamp",
     issuer: "Coursera",

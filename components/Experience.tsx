@@ -3,7 +3,7 @@ import React from 'react';
 import { ExperienceItem } from '../types';
 import Section from './Section';
 
-const experienceData: ExperienceItem[] = [
+export const experienceData: ExperienceItem[] = [
   {
     role: 'Software Development & AI Trainee',
     company: 'Capaciti',

@@ -3,7 +3,7 @@ import React, { useState, useEffect, useRef } from 'react';
 import Section from './Section';
 
 // Grouped skills data
-const skillCategories = [
+export const skillCategories = [
   {
     title: "Frontend Engineering",
     skills: ["React.js", "Next.js", "TypeScript", "Tailwind CSS", "HTML5 & CSS3", "Figma", "GSAP/Framer Motion"]

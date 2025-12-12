@@ -4,7 +4,7 @@ import { Project } from '../types';
 import Section from './Section';
 import { ExternalLinkIcon, XIcon, BackArrowIcon } from './icons/Icons';
 
-const projectsData: Project[] = [
+export const projectsData: Project[] = [
   {
     title: 'SA School Recommendation System',
     description: 'An intelligent platform designed to assist users in finding the best-fit schools in South Africa based on personalized criteria.',
