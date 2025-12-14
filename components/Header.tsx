@@ -58,12 +58,12 @@ const Header: React.FC<HeaderProps> = ({ navRefs, theme, toggleTheme }) => {
             </div>
 
             {/* Desktop Navigation */}
-            <nav className="hidden md:flex items-center space-x-8">
+            <nav className="hidden md:flex items-center space-x-6">
               {navLinks.map((link) => (
                 <button 
                   key={link.name} 
                   onClick={() => scrollToSection(link.ref)} 
-                  className="text-gray-700 dark:text-medium hover:text-accent font-medium transition-colors"
+                  className="text-gray-700 dark:text-medium hover:text-accent font-medium transition-colors text-sm lg:text-base"
                 >
                   {link.name}
                 </button>

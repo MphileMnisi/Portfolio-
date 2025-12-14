@@ -207,6 +207,11 @@ const Education: React.FC = () => {
         <div className="md:col-span-2">
            <h3 className="text-2xl font-bold mb-8 text-primary dark:text-white flex items-center gap-3">
              <span className="w-2 h-8 bg-accent rounded-full"></span>
+             <img 
+               src="https://static.vecteezy.com/system/resources/thumbnails/004/557/333/small/graduation-cap-cartoon-object-vector.jpg" 
+               alt="Academic Background" 
+               className="w-10 h-10 object-cover bg-white rounded-full p-1 shadow-sm border border-gray-100 dark:border-gray-700" 
+             />
              Academic Background
            </h3>
            <div className="relative border-l-2 border-gray-200 dark:border-secondary space-y-12">
