@@ -13,7 +13,7 @@ const DELETING_SPEED = 75;
 const PAUSE_DURATION = 2000;
 
 const Hero: React.FC = () => {
-  const titles = useMemo(() => ["Nkosimphile Mnisi.", "a Software Developer."], []);
+  const titles = useMemo(() => ["Nkosimphile Mnisi.", "a Machine Learning Engineer."], []);
   const [titleIndex, setTitleIndex] = useState(0);
   const [subText, setSubText] = useState('');
   const [isDeleting, setIsDeleting] = useState(false);
@@ -489,9 +489,6 @@ const Hero: React.FC = () => {
                 </span>
             </span>
             </h1>
-            <p className="max-w-2xl mx-auto text-lg md:text-xl text-gray-700 dark:text-gray-300 font-medium leading-relaxed bg-white/50 dark:bg-primary/50 backdrop-blur-sm p-4 rounded-xl shadow-sm">
-            AI/ML engineer specializing in generative AI and cloud-based solutions, with a proven track record of building scalable tools that drive business growth. Passionate about applying machine learning to solve real-world challenges in healthcare and education.
-            </p>
         </div>
 
         {/* CTA Buttons */}

@@ -6,6 +6,43 @@ import { ExternalLinkIcon, XIcon, BackArrowIcon } from './icons/Icons';
 
 export const projectsData: Project[] = [
   {
+    title: 'Pentacore',
+    description: 'A scalable, cloud-native web application containerized with Docker and deployed on Google Cloud Run for high availability and performance.',
+    detailedDescription: `
+      <div class="space-y-6 text-gray-700 dark:text-gray-300">
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Project Overview</h4>
+          <p>Pentacore represents a leap into modern cloud-native architecture. Unlike traditional hosting, this application is containerized using Docker and orchestrated via Google Cloud Run, allowing it to scale automatically down to zero when not in use and up to meet high traffic demands instantly.</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Key Features</h4>
+          <ul class="list-disc list-inside space-y-1 ml-2">
+            <li><strong>Serverless Architecture:</strong> Deployed on Google Cloud Run for fully managed serverless execution.</li>
+            <li><strong>Containerization:</strong> Wrapped in Docker containers ensuring consistency across development and production environments.</li>
+            <li><strong>Auto-Scaling:</strong> Automatically adjusts infrastructure resources based on incoming request volume.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Technical Challenges & Solutions</h4>
+          <div class="grid gap-4">
+            <div class="bg-gray-50 dark:bg-white/5 p-4 rounded-lg border-l-4 border-accent">
+              <p class="font-semibold text-primary dark:text-white">Challenge: Cold Start Latency</p>
+              <p class="text-sm mt-1">Minimizing the delay experienced by users when the serverless container spins up from a dormant state.</p>
+              <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+                   <p class="font-semibold text-accent">Solution:</p>
+                   <p class="text-sm mt-1">Optimized the Docker image size using multi-stage builds and implemented lightweight server frameworks to drastically reduce boot times.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+    tags: ['Google Cloud', 'Docker', 'React', 'DevOps'],
+    imageUrl: 'https://images.unsplash.com/photo-1451187580459-43490279c0fa?q=80&w=2072&auto=format&fit=crop',
+    liveUrl: 'https://pentacore-189473728151.us-west1.run.app/',
+    theme: 'tech'
+  },
+  {
     title: 'CAPACITI Intelligent Talent Hub',
     description: 'An AI-powered platform designed to streamline talent acquisition by intelligently matching candidates to opportunities within the CAPACITI ecosystem.',
     detailedDescription: `
