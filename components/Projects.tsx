@@ -6,6 +6,52 @@ import { ExternalLinkIcon, XIcon, BackArrowIcon } from './icons/Icons';
 
 export const projectsData: Project[] = [
   {
+    title: 'CAPACITI Intelligent Talent Hub',
+    description: 'An AI-powered platform designed to streamline talent acquisition by intelligently matching candidates to opportunities within the CAPACITI ecosystem.',
+    detailedDescription: `
+      <div class="space-y-6 text-gray-700 dark:text-gray-300">
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Project Overview</h4>
+          <p>The CAPACITI Intelligent Talent Hub is a centralized platform bridging the gap between skilled graduates and industry opportunities. By leveraging AI algorithms, it analyzes candidate profiles and job requirements to provide high-quality matches, reducing the time-to-hire for partners and improving placement rates for graduates.</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Key Features</h4>
+          <ul class="list-disc list-inside space-y-1 ml-2">
+            <li><strong>AI-Driven Matching:</strong> Intelligent algorithms that score candidate suitability based on skills, experience, and soft skills.</li>
+            <li><strong>Dynamic Profiles:</strong> Comprehensive talent profiles that go beyond resumes, showcasing portfolios and assessments.</li>
+            <li><strong>Analytics Dashboard:</strong> Real-time insights into talent pool demographics and placement metrics for administrators.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Technical Challenges & Solutions</h4>
+          <div class="grid gap-4">
+            <div class="bg-gray-50 dark:bg-white/5 p-4 rounded-lg border-l-4 border-accent">
+              <p class="font-semibold text-primary dark:text-white">Challenge: Skill Taxonomy Standardization</p>
+              <p class="text-sm mt-1">Normalizing diverse skill descriptions (e.g., "ReactJS", "React.js", "React") for accurate matching.</p>
+              <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+                   <p class="font-semibold text-accent">Solution:</p>
+                   <p class="text-sm mt-1">Implemented a semantic mapping layer using NLP to categorize and standardize skills into a unified taxonomy before processing matches.</p>
+              </div>
+            </div>
+             <div class="bg-gray-50 dark:bg-white/5 p-4 rounded-lg border-l-4 border-accent">
+              <p class="font-semibold text-primary dark:text-white">Challenge: Search Performance</p>
+              <p class="text-sm mt-1">Maintaining fast query times while filtering through complex candidate datasets with multiple criteria.</p>
+              <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+                   <p class="font-semibold text-accent">Solution:</p>
+                   <p class="text-sm mt-1">Utilized advanced indexing strategies and server-side filtering to ensure sub-second search results even as the user base grows.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+    tags: ['React', 'Next.js', 'AI Matching', 'Tailwind CSS'],
+    imageUrl: 'https://images.unsplash.com/photo-1522071820081-009f0129c71c?q=80&w=2070&auto=format&fit=crop',
+    liveUrl: 'https://capacitihub.vercel.app/',
+    sourceUrl: 'https://github.com/nkosimphile-mnisi/capaciti-talent-hub',
+    theme: 'tech'
+  },
+  {
     title: 'SA School Recommendation System',
     description: 'An intelligent platform designed to assist users in finding the best-fit schools in South Africa based on personalized criteria.',
     detailedDescription: `
