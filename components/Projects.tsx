@@ -52,6 +52,52 @@ export const projectsData: Project[] = [
     theme: 'tech'
   },
   {
+    title: 'RecruitmentAI.Notebook',
+    description: 'An interactive analytical tool designed to audit, visualize, and mitigate algorithmic bias in automated hiring processes.',
+    detailedDescription: `
+      <div class="space-y-6 text-gray-700 dark:text-gray-300">
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Project Overview</h4>
+          <p>As AI becomes central to recruitment, algorithmic bias poses a significant ethical risk. RecruitmentAI.Notebook is an interactive web-based environment that allows data scientists and HR professionals to audit hiring algorithms. It visualizes how machine learning models might inadvertently discriminate against protected groups and demonstrates mitigation techniques in real-time.</p>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Key Features</h4>
+          <ul class="list-disc list-inside space-y-1 ml-2">
+            <li><strong>Bias Auditing Metrics:</strong> meaningful statistical analysis using Disparate Impact Ratio and Equal Opportunity Difference.</li>
+            <li><strong>Interactive Visualizations:</strong> Dynamic charts that compare demographic distributions before and after applying fairness constraints.</li>
+            <li><strong>Mitigation Algorithms:</strong> Demonstrations of re-weighting and re-sampling techniques to achieve algorithmic fairness.</li>
+          </ul>
+        </div>
+        <div>
+          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Technical Challenges & Solutions</h4>
+          <div class="grid gap-4">
+            <div class="bg-gray-50 dark:bg-white/5 p-4 rounded-lg border-l-4 border-accent">
+              <p class="font-semibold text-primary dark:text-white">Challenge: Visualizing Statistical Bias</p>
+              <p class="text-sm mt-1">Making complex statistical bias metrics understandable for non-technical HR stakeholders.</p>
+              <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+                   <p class="font-semibold text-accent">Solution:</p>
+                   <p class="text-sm mt-1">Developed an intuitive dashboard using Recharts that maps abstract metrics into clear, color-coded "Fairness vs. Accuracy" trade-off graphs.</p>
+              </div>
+            </div>
+             <div class="bg-gray-50 dark:bg-white/5 p-4 rounded-lg border-l-4 border-accent">
+              <p class="font-semibold text-primary dark:text-white">Challenge: Client-Side Data Processing</p>
+              <p class="text-sm mt-1">Processing large datasets for bias analysis without heavy server costs.</p>
+              <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
+                   <p class="font-semibold text-accent">Solution:</p>
+                   <p class="text-sm mt-1">Optimized data handling using Web Workers to perform statistical calculations off the main thread, ensuring the UI remains responsive.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    `,
+    tags: ['AI Ethics', 'Data Visualization', 'React', 'Next.js'],
+    imageUrl: 'https://images.unsplash.com/photo-1555949963-aa79dcee981c?q=80&w=2070&auto=format&fit=crop',
+    liveUrl: 'https://bias-in-hiring.vercel.app/',
+    sourceUrl: 'https://github.com/nkosimphile-mnisi/recruitment-ai-notebook',
+    theme: 'dark'
+  },
+  {
     title: 'SA School Recommendation System',
     description: 'An intelligent platform designed to assist users in finding the best-fit schools in South Africa based on personalized criteria.',
     detailedDescription: `
