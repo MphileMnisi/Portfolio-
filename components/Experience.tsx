@@ -12,7 +12,7 @@ export const experienceData: ExperienceItem[] = [
     description: [
       'Designing and deploying full-stack web applications using Next.js and Firebase, managing the complete software lifecycle from coding to testing.',
       'Engineering AI solutions including RAG pipelines for conversational agents and BERT-based models for sentiment analysis tools like SentiCoreX.',
-      'Developing data-driven platforms such as the "SA School Recommendation System" by implementing custom content-based filtering algorithms.',
+      'Architecting the "CAPACITI Intelligent Talent Hub", utilizing AI algorithms to match graduates with employment opportunities and standardizing skill taxonomies.',
       'Actively applying machine learning concepts in agile environments to build innovative solutions while refining professional communication skills.',
     ],
   },

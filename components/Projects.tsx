@@ -135,52 +135,6 @@ export const projectsData: Project[] = [
     theme: 'dark'
   },
   {
-    title: 'SA School Recommendation System',
-    description: 'An intelligent platform designed to assist users in finding the best-fit schools in South Africa based on personalized criteria.',
-    detailedDescription: `
-      <div class="space-y-6 text-gray-700 dark:text-gray-300">
-        <div>
-          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Project Overview</h4>
-          <p>A comprehensive data-driven platform designed to simplify the school selection process for South African parents. By aggregating data from various educational institutions, the system provides a centralized hub for comparing schools based on performance, location, fees, and extra-curricular offerings.</p>
-        </div>
-        <div>
-          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Key Features</h4>
-          <ul class="list-disc list-inside space-y-1 ml-2">
-            <li><strong>Personalized Matching:</strong> Algorithm-based recommendations matching student needs with school facilities.</li>
-            <li><strong>Geolocation Services:</strong> Interactive maps to find schools within a specific radius.</li>
-            <li><strong>Comparative Analytics:</strong> Side-by-side comparison of school fees, pass rates, and facilities.</li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Technical Challenges & Solutions</h4>
-          <div class="grid gap-4">
-            <div class="bg-gray-50 dark:bg-white/5 p-4 rounded-lg border-l-4 border-accent">
-              <p class="font-semibold text-primary dark:text-white">Challenge: Data Fragmentation</p>
-              <p class="text-sm mt-1">Sourcing accurate and uniform data for thousands of schools across different provinces was difficult due to fragmented public records.</p>
-              <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
-                   <p class="font-semibold text-accent">Solution:</p>
-                   <p class="text-sm mt-1">Developed a custom data aggregation script to scrape and normalize data from multiple government portals, structuring it into a flexible Firebase NoSQL database.</p>
-              </div>
-            </div>
-             <div class="bg-gray-50 dark:bg-white/5 p-4 rounded-lg border-l-4 border-accent">
-              <p class="font-semibold text-primary dark:text-white">Challenge: Recommendation Logic</p>
-              <p class="text-sm mt-1">Creating a scoring system that accurately reflects user priorities without bias.</p>
-              <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
-                   <p class="font-semibold text-accent">Solution:</p>
-                   <p class="text-sm mt-1">Implemented a weighted content-based filtering algorithm that dynamically adjusts scores based on user-defined importance factors.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    `,
-    tags: ['React', 'Next.js', 'Firebase', 'Data Scraping'],
-    imageUrl: 'https://images.unsplash.com/photo-1580582932707-520aed937b7b?q=80&w=2148&auto=format&fit=crop',
-    liveUrl: 'https://recommender-hshy.vercel.app/',
-    sourceUrl: 'https://github.com/nkosimphile-mnisi/sa-school-recommendation-system',
-    theme: 'calm'
-  },
-  {
     title: 'Conversational AI Chatbot',
     description: 'A responsive and intelligent chatbot that provides human-like, context-aware responses using modern NLP.',
     detailedDescription: `
@@ -272,52 +226,6 @@ export const projectsData: Project[] = [
     liveUrl: 'https://ai-resume-builder-one-phi.vercel.app/',
     sourceUrl: 'https://github.com/nkosimphile-mnisi/ai-resume-builder',
     theme: 'creative'
-  },
-  {
-    title: 'SA Grade 12 Marker',
-    description: 'An automated system that marks Grade 12 scripts and provides instant, detailed feedback to students.',
-    detailedDescription: `
-       <div class="space-y-6 text-gray-700 dark:text-gray-300">
-        <div>
-          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Project Overview</h4>
-          <p>An EdTech solution aimed at reducing the administrative burden on educators and providing instant feedback to students. The system digitizes handwritten exam scripts and uses AI to grade them against a memorandum, providing detailed feedback on errors.</p>
-        </div>
-        <div>
-          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Key Features</h4>
-          <ul class="list-disc list-inside space-y-1 ml-2">
-            <li><strong>Handwriting Recognition (OCR):</strong> Converts handwritten student answers into digital text.</li>
-            <li><strong>Automated Grading:</strong> Compares student answers to the memo using semantic similarity.</li>
-            <li><strong>Detailed Feedback Loop:</strong> Explains exactly where and why marks were lost.</li>
-          </ul>
-        </div>
-        <div>
-          <h4 class="text-xl font-bold text-primary dark:text-white mb-2">Technical Challenges & Solutions</h4>
-          <div class="grid gap-4">
-            <div class="bg-gray-50 dark:bg-white/5 p-4 rounded-lg border-l-4 border-accent">
-              <p class="font-semibold text-primary dark:text-white">Challenge: Handwriting Legibility</p>
-              <p class="text-sm mt-1">Accurately deciphering varied and messy student handwriting styles.</p>
-              <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
-                   <p class="font-semibold text-accent">Solution:</p>
-                   <p class="text-sm mt-1">Integrated a specialized handwriting OCR API and implemented a confidence threshold system that flags ambiguous text for manual review.</p>
-              </div>
-            </div>
-            <div class="bg-gray-50 dark:bg-white/5 p-4 rounded-lg border-l-4 border-accent">
-              <p class="font-semibold text-primary dark:text-white">Challenge: Semantic Grading</p>
-              <p class="text-sm mt-1">Grading answers that are correct in meaning but phrased differently from the memo.</p>
-              <div class="mt-3 pt-3 border-t border-gray-200 dark:border-gray-700">
-                   <p class="font-semibold text-accent">Solution:</p>
-                   <p class="text-sm mt-1">Used cosine similarity on vector embeddings of the answers to determine semantic closeness rather than relying on strict keyword matching.</p>
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-    `,
-    tags: ['React', 'Next.js', 'AI/ML', 'OCR'],
-    imageUrl: 'https://images.unsplash.com/photo-1509062522246-3755977927d7?q=80&w=2132&auto=format&fit=crop',
-    liveUrl: 'https://sa-grade-12-marker.vercel.app/',
-    sourceUrl: 'https://github.com/nkosimphile-mnisi/sa-grade-12-marker',
-    theme: 'dark'
   },
   {
     title: 'SentiCoreX',
