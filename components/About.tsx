@@ -101,7 +101,7 @@ const About: React.FC = () => {
                Professional Biography
             </h3>
             <p className="text-gray-700 dark:text-gray-300 text-lg leading-relaxed">
-              Hello! I'm Nkosimphile Mnisi, a forward-thinking Software Developer with a specialized focus on Artificial Intelligence and Machine Learning. My journey began with a National Diploma in Information Technology, where I cultivated a deep fascination for transforming complex data into intelligent, user-centric solutions. I thrive at the intersection of robust backend architecture and intuitive frontend design, consistently pushing the boundaries of what web applications can achieve through Generative AI integration.
+              Hello! I'm Nkosimphile Mnisi, a forward-thinking Machine Learning Engineer with a specialized focus on Artificial Intelligence and Machine Learning. My journey began with a National Diploma in Information Technology, where I cultivated a deep fascination for transforming complex data into intelligent, user-centric solutions. I thrive at the intersection of robust backend architecture and intuitive frontend design, consistently pushing the boundaries of what web applications can achieve through Generative AI integration.
             </p>
           </div>
           
