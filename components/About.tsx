@@ -53,8 +53,8 @@ const About: React.FC = () => {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
   const profileImages = [
-    "https://media.licdn.com/dms/image/v2/D4E03AQHfe7l5uB6Fqw/profile-displayphoto-crop_800_800/B4EZpKwsNPKkAI-/0/1762190874743?e=1766620800&v=beta&t=Nze3kQFVCjQrnO5_8N0Ad_Zi_N6GY9VhnxgJno3b-RE",
-    "https://static.vecteezy.com/system/resources/previews/030/762/925/large_2x/artificial-intelligence-abstract-background-the-future-of-artificial-intelligence-generative-ai-free-photo.jpg"
+    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIfWEXbpXO5OCnTu06ycd96UlHV6DuP-xLiA&s",
+    "https://avatars.githubusercontent.com/u/177732809?v=4"
   ];
 
   useEffect(() => {
@@ -83,13 +83,13 @@ const About: React.FC = () => {
     };
   }, []);
 
-  // Image rotation logic
+  // Image rotation logic - exactly 5 seconds
   useEffect(() => {
     const interval = setInterval(() => {
       setCurrentImageIndex((prev) => (prev + 1) % profileImages.length);
-    }, 5000); // Switch every 5 seconds
+    }, 5000); 
     return () => clearInterval(interval);
-  }, []);
+  }, [profileImages.length]);
 
   return (
     <Section id="about" title="About Me">
@@ -117,13 +117,13 @@ const About: React.FC = () => {
         </div>
 
         <div className="md:col-span-2 flex justify-center items-center h-full">
-            <div className="relative w-64 h-64 md:w-80 md:h-80 sticky top-24 rounded-full group cursor-pointer transition-transform duration-500 hover:scale-105">
+            <div className="relative w-64 h-64 md:w-80 md:h-80 sticky top-24 rounded-full group cursor-pointer transition-transform duration-500 hover:scale-105 bg-gray-100 dark:bg-secondary/20 overflow-hidden shadow-2xl ring-4 ring-white dark:ring-secondary/50">
                 {profileImages.map((src, index) => (
                     <img
                         key={src}
                         src={src}
-                        alt={index === 0 ? "Nkosimphile Mnisi" : "AI Technology Abstract"}
-                        className={`absolute inset-0 w-full h-full rounded-full object-cover shadow-2xl border-4 border-white dark:border-secondary transition-all duration-1000 group-hover:shadow-accent/50 group-hover:border-accent ${
+                        alt={`Nkosimphile Mnisi Profile Photo ${index + 1}`}
+                        className={`absolute inset-0 w-full h-full rounded-full object-cover border-4 border-transparent transition-opacity duration-1000 ease-in-out group-hover:border-accent/30 will-change-opacity ${
                             index === currentImageIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
                         }`}
                     />
@@ -151,15 +151,11 @@ const About: React.FC = () => {
               `}
               style={{ transitionDelay: `${catIndex * 150}ms` }}
             >
-              {/* Card Background Gradient Effect */}
               <div className="absolute inset-0 rounded-2xl bg-gradient-to-br from-accent/5 via-transparent to-blue-500/5 opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none" />
-              
-              {/* Decorative top border gradient */}
               <div className="absolute top-0 left-0 right-0 h-1 bg-gradient-to-r from-transparent via-accent/50 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500 rounded-t-2xl"></div>
 
               <div className="relative z-10">
                 <div className="flex items-center gap-4 mb-6">
-                  {/* Animated Icon Container */}
                   <div className="p-3.5 rounded-xl bg-accent/10 text-accent group-hover:bg-accent group-hover:text-white group-hover:shadow-lg group-hover:shadow-accent/30 transition-all duration-300 transform group-hover:scale-110 group-hover:-rotate-3">
                      {getCategoryIcon(catIndex)}
                   </div>
