@@ -52,8 +52,9 @@ const About: React.FC = () => {
   const [skillsInView, setSkillsInView] = useState(false);
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
 
+  // Updated with high-resolution images
   const profileImages = [
-    "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTIfWEXbpXO5OCnTu06ycd96UlHV6DuP-xLiA&s",
+    "https://images.stockcake.com/public/c/6/1/c61942d7-9bc6-48a9-9683-5f5a71e87201_large/futuristic-ai-portrait-stockcake.jpg",
     "https://avatars.githubusercontent.com/u/177732809?v=4"
   ];
 
@@ -126,6 +127,7 @@ const About: React.FC = () => {
                         className={`absolute inset-0 w-full h-full rounded-full object-cover border-4 border-transparent transition-opacity duration-1000 ease-in-out group-hover:border-accent/30 will-change-opacity ${
                             index === currentImageIndex ? 'opacity-100 z-10' : 'opacity-0 z-0'
                         }`}
+                        style={{ imageRendering: 'auto' }}
                     />
                 ))}
             </div>
